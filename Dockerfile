@@ -3,14 +3,13 @@
 FROM phusion/baseimage
 MAINTAINER Andy Ruck mychiara+docker at gmail com
 
-ENV DEBIAN_FRONTEND=noninteractive \
-        INITRD=No \
+ENV INITRD=No \
         TERM=dumb \
         MY_TZ=Europe/Berlin
 
 RUN rm /etc/timezone && echo $MY_TZ >> /etc/timezone && \
     locale-gen en_US.UTF-8 && \
-    apt-get update && \
+    apt-get update && DEBIAN_FRONTEND=noninteractive && \
     apt-get install -yq --no-install-recommends \
         build-essential \
         software-properties-common \
