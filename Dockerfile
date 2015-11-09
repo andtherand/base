@@ -11,16 +11,9 @@ RUN rm /etc/timezone && echo $MY_TZ >> /etc/timezone && \
     locale-gen en_US.UTF-8 && \
     apt-get update && DEBIAN_FRONTEND=noninteractive && \
     apt-get install -yq --no-install-recommends \
-        build-essential \
-        software-properties-common \
         git \
         curl  \
-        wget \
-        zsh && \
+        wget && \
 
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
-    cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc && \
-
-    chsh -s $(which zsh) && \
     apt-get autoclean && apt-get autoremove && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
