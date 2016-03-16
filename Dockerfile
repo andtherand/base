@@ -1,7 +1,7 @@
 #!/usr/bin/env docker
 
-FROM phusion/baseimage:0.9.17
-MAINTAINER Andy Ruck mychiara+docker at gmail com
+FROM phusion/baseimage:0.9.18
+MAINTAINER Andy Ruck
 
 ENV INITRD=No \
         TERM=dumb \
